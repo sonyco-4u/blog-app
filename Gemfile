@@ -4,6 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.1.3'
 
 gem 'rubocop', '>= 1.0', '< 2.0'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.4', '>= 7.0.4.1'
 
@@ -52,7 +53,7 @@ gem 'bootsnap', require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri mingw x64_mingw]
-  gem 'rspec-rails'
+  gem 'rspec-rails', '~> 6.0.0'
 end
 
 group :development do
@@ -72,3 +73,6 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
+# gem 'rspec-rails', '~> 6.0'
+
+gem 'rails-controller-testing', '~> 1.0'

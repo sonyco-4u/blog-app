@@ -65,8 +65,9 @@ m = Module.new do
 
   def bundler_requirement
     @bundler_requirement ||=
-      env_var_version || cli_arg_version ||
-        bundler_requirement_for(lockfile_version)
+      env_var_version ||
+      cli_arg_version ||
+      bundler_requirement_for(lockfile_version)
   end
 
   def bundler_requirement_for(version)
@@ -74,13 +75,7 @@ m = Module.new do
 
     bundler_gem_version = Gem::Version.new(version)
 
-    requirement = bundler_gem_version.approximate_recommendation
-
-    return requirement unless Gem.rubygems_version < Gem::Version.new("2.7.0")
-
-    requirement += ".a" if bundler_gem_version.prerelease?
-
-    requirement
+    bundler_gem_version.approximate_recommendation
   end
 
   def load_bundler!

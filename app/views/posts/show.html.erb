@@ -1,0 +1,19 @@
+<div class="p-8 flex flex-col gap-8">
+  <div class="postDetails bg-[#11537d] rounded-[30px] flex-grow text-white flex flex-col p-[30px]">
+  <div>
+<h2 class="text-3xl font-semibold"><%= @post.title %></h2>
+<h1 class="text-md text-center font-medium"><%= @post.text %></h1>
+<p class="self-end"><%= @post.likes_counter %> Likes</p>
+<p><%= @post.comments_counter %> Comments</p>
+<div class="flex flex-col gap-4 comments-container bg-[#11537d] rounded-[30px] flex-grow text-white p-[30px]">
+<h1>Comments</h1>
+<% @post.comments.each do |comment| %>
+<div class="comment-details flex-grow text-white flex flex-row">  
+    <%user = User.find(comment.author_id)%>
+  <p class="text-md text-center font-medium"><%= comment.author.name %>: <%= comment.text %></p>
+  </div>
+<% end %>
+</div>
+</div>
+</div>
+</div>
