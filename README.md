@@ -1,151 +1,202 @@
+<a name="readme-top"></a>
+
+<!--
+HOW TO USE:
+This is an example of how you may give instructions on setting up your project locally.
+
+Modify this file to match your project and remove sections that don't apply.
+
+REQUIRED SECTIONS:
+- Table of Contents
+- About the Project
+  - Built With
+  - Live Demo
+- Getting Started
+- Authors
+- Future Features
+- Contributing
+- Show your support
+- Acknowledgements
+- License
+
+After you're finished please remove all the comments and instructions!
+-->
+
 <div align="center">
-  <!-- You are encouraged to replace this logo with your own! Otherwise you can also remove it. -->
-  <img src="murple_logo.png" alt="logo" width="140"  height="auto" />
   <br/>
 
-  <h3><b>Microverse README Template</b></h3>
+  <h3><b>Blog App - RoR</b></h3>
 
 </div>
 
+<!-- TABLE OF CONTENTS -->
+
+# 📗 Table of Contents
+
+- [📗 Table of Contents](#-table-of-contents)
+- [📖 Blog App ](#-blog-app-)
+  - [🛠 Built With ](#-built-with-)
+    - [Ruby on Rails ](#ruby-on-rails-)
+    - [Key Features ](#key-features-)
+  - [🚀 Live Demo ](#-live-demo-)
+  - [💻 Getting Started ](#-getting-started-)
+    - [Prerequisites](#prerequisites)
+    - [Setup](#setup)
+    - [Usage](#usage)
+    - [Run tests](#run-tests)
+  - [👥 Authors ](#-authors-)
+  - [🔭 Future Features ](#-future-features-)
+  - [🤝 Contributing ](#-contributing-)
+  - [🙏 Acknowledgments ](#-acknowledgments-)
+  - [📝 License ](#-license-)
+
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [Blog App ]
+# 📖 Blog App <a name="about-project"></a>
 
-> The Blog app will be a classic example of a blog website.
+**The Blog app** is a classic fully functional blog website. It shows a list of posts and empower readers to interact with them by adding comments and liking posts.
 
-**[Blog App]** This project is about developing fully functional blog app website. Created using Ruby on Rails, it allows users to create, modify and display posts. It also allows users to read, post and like comments..
+## 🛠 Built With <a name="built-with"></a>
 
-### Tech Stack
+### Ruby on Rails <a name="tech-stack"></a>
 
-> The tech stack for building this project was Ruby on Rails
+<details>
+  <summary>Client</summary>
+  <ul>
+    <li><a href="https://reactjs.org/">React.js</a></li>
+  </ul>
+</details>
+
+<details>
+  <summary>Server</summary>
+  <ul>
+    <li><a href="https://www.ruby-lang.org/en/">Ruby</a></li>
+  </ul>
+</details>
+
+<details>
+<summary>Database</summary>
+  <ul>
+    <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
+  </ul>
+</details>
 
 <!-- Features -->
 
-### Key Features
+### Key Features <a name="key-features"></a>
 
-> Describe between 1-3 key features of the application.
+- **Created basing on a data model**
+- **Working with RoR Models**
+- **Connection to a Postgresql Datacase**
+- **Working with forms and views**
+- **Working with controllers**
+- **Aunthentication and Authorization**
+- **Testing with RSpec**
+- **Creation of an API**
 
-- **[Adding Comments]**
-- **[Adding Posts]**
-- **[Liking a Post]**
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LIVE DEMO -->
 
-## 🚀 Live Demo
+## 🚀 Live Demo <a name="live-demo"></a>
 
-> Comming Soom!!!
+> Live Demo link will be added at the end of the project
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
 
-## 💻 Getting Started
-
-> In order to run this project you need to run the following commands in your terminal:Ensure you cd into the directory in which you had clone the project into.
-
-To get a local copy up and running, follow these steps.
+## 💻 Getting Started <a name="getting-started"></a>
 
 ### Prerequisites
 
 In order to run this project you need:
 
-```sh
- gem install rails
-```
+Ruby installed
+Postgresql installed
+
+gem install rails
 
 ### Setup
 
 Clone this repository to your desired folder:
 
-```sh
-  cd blog-app
-  git clone https://github.com/sonyco-4u/blog-app.git
-```
+git clone https://github.com/sonyco-4u/blog-app.git
 
-### Install
-
-1. installing gems
-
-```sh
-  bundle install
-```
-
-2. configure database
-
-```sh
-   rails db:create
-   rails db:migrate
-```
+cd blog-app
 
 ### Usage
 
 To run the project, execute the following command:
 
-```sh
-  rails server
-```
+rails server
 
 ### Run tests
 
 To run tests, run the following command:
 
-```sh
-  bin/rails test test/models/article_test.rb
-```
+rspec
 
-### Deployment
-
-You can deploy this project using:
-
-- [Heroku](https://www.heroku.com/)
-- [Netlify](https://www.netlify.com/)
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- AUTHORS -->
 
 ## 👥 Authors <a name="authors"></a>
-
-> Mention all of the collaborators of this project.
-
-## Ezema Anthony Sunday
 
 👤 Ezema Anthony Sunday
 
 - GitHub: [@sonyco-4u](https://github.com/sonyco-4u)
 - Twitter: [@EZEMASUN](https://twitter.com/EZEMASUN)
 - LinkedIn: [ezema-anthony-sunday](https://www.linkedin.com/in/sunday-athony-ezema/)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **processing data in models**
-- [ ] **validations and model specs.**
+>
+
+- [ ] **Working on Views**
+- [ ] **Working on Forms**
+- [ ] **Adding Devise**
+- [ ] **Adding Authorization rules**
+- [ ] **Integration specs for Views**
+- [ ] **Adding API endpoints**
+- [ ] **API documentation**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTRIBUTING -->
 
-## 🤝 Contributing
+## 🤝 Contributing <a name="contributing"></a>
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](https://github.com/sonyco-4u/blog-app.git/issues).
 
-## ⭐️ Show your support
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-If you like this project please give it a ⭐️!
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## 🙏 Acknowledgments
+<!-- ACKNOWLEDGEMENTS -->
 
-I would like to thank @microverse for giving me the opportunity to work on this project.
+## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-- **[How to get Started with Ruby on Rails]**
+Credit to Microverse for the project specification
 
-  - [Ruby on Rails](https://guides.rubyonrails.org/getting_started.html)
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LICENSE -->
 
-## 📝 License
+## 📝 License <a name="license"></a>
 
-This project is [MIT](./LICENSE) licensed.
+This project is [MIT](./License.md) licensed.
 
 _NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
