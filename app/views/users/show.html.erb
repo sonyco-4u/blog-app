@@ -1,1 +1,32 @@
-<h1>Here is data and posts for certain user</h1>
+<div class="userContainer flex flex-col gap-8 py-8 w-[80%] mx-auto">
+  <div class="userCard">
+  <a href="#" class="flex flex-row gap-[30px]">
+      <div class="userImage w-[15%]">
+        <img src=<%= @user.photo %>>
+      </div>
+      <div class="userDetails bg-[#CE7777] rounded-[30px] flex-grow text-white flex justify-between items-center p-[30px]">
+        <h2 class="text-[40px] font-[600]"><%= @user.name %></h2>
+        <p class="self-end text-[20px] font-[400]">Number of posts: <%= @user.posts_counter %></p>
+      </div>
+    </a>
+  </div>
+  <p class="userBio bg-[#CE7777] rounded-[30px] flex-grow text-3xl font-semibold text-white flex justify-between items-center p-[30px]">
+    <%= @user.bio %>
+  </p>
+  <ul class="userCards flex flex-col gap-8">
+<%= @posts.each_with_index do |post ,index|%>
+<li class="postCard">
+ <%= link_to user_posts_path(@user), class: "flex flex-row gap-[30px] posts_link_#{post.id}" do %>
+          <div class="postDetails bg-[#11537d] rounded-[30px] flex-grow text-white flex flex-col p-[30px]">
+            <div>  
+              <h2 class="text-3xl font-semibold"><%= post.title %></h2>
+              <p class="text-md text-center font-medium"><%= post.text %></p>
+            </div>
+            <p class="self-end">Likes: <%= post.likes_counter %> , comments: <%= post.comments_counter %></p>
+          </div>
+        <% end %>
+</li>
+<% end %>
+  </ul>
+  <%= link_to "See all posts", user_posts_path(@user), class: 'SeeAllBtn' %>
+</div>
