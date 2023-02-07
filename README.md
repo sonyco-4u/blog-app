@@ -181,6 +181,7 @@ Feel free to check the [issues page](https://github.com/sonyco-4u/blog-app.git/i
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+
 <!-- ACKNOWLEDGEMENTS -->
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
@@ -190,6 +191,7 @@ Credit to Microverse for the project specification
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 <!-- LICENSE -->
 
