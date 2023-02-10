@@ -1,3 +1,4 @@
+<%= render "shared/header" %>
 <div class="posts-container">
   <div class="post-data">
     <div class="post-title">
@@ -8,10 +9,16 @@
     <p><%= @post.text %></p>
   </div>
   <%= render "shared/add_like"%>
+  <% if can? :destroy, @post %>
+    <%= button_to 'Delete Post', post_path(@post.id), method: :delete, data: {turbo_method: :delete} %>
+  <% end %>
   <div class="comments-container">
     <% @comments.each do |comment| %>
       <% if comment.post_id == @post.id %>
       <h4>Username:<%= comment.user.name %> => <%= comment.text %></h4>
+        <% if can? :destroy, comment %>
+          <%= button_to 'Delete comment', comment_path(comment.id), method: :delete, data: {turbo_method: :delete} %>
+        <% end %>
       <%end%>
     <% end %>
   </div>

@@ -5,10 +5,10 @@ class LikesController < ApplicationController
 
   def create
     @like = Like.new(like_params)
-    @like.author_id = current_user
+    @like.author_id = current_user.id
 
     if @like.save
-      redirect_to post_show_path(current_user)
+      redirect_to post_show_path(current_user.id)
     else
       flash.now[:alert] = 'Like creation failed'
     end
