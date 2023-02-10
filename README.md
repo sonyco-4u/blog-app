@@ -186,6 +186,7 @@ Feel free to check the [issues page](https://github.com/sonyco-4u/blog-app.git/i
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+
 <!-- ACKNOWLEDGEMENTS -->
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
@@ -196,6 +197,7 @@ Credit to Microverse for the project specification
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+
 <!-- LICENSE -->
 
 ## 📝 License <a name="license"></a>
@@ -203,5 +205,6 @@ Credit to Microverse for the project specification
 This project is [MIT](./License.md) licensed.
 
 _NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
