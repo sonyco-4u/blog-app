@@ -149,6 +149,11 @@ rspec
 - Twitter: [@EZEMASUN](https://twitter.com/EZEMASUN)
 - LinkedIn: [ezema-anthony-sunday](https://www.linkedin.com/in/sunday-athony-ezema/)
 
+👤 Abubakar Ummar
+
+- GitHub: [@Haywayaheadshot](https://github.com/Haywayaheadshot)
+- LinkedIn: [Abubakar Ummar](https://www.linkedin.com/in/abubakar-ummar/)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
