@@ -1,31 +1,19 @@
-<div class="p-8 flex flex-col gap-8">
-  <div class="postDetails bg-[#11537d] rounded-[30px] flex-grow text-white flex flex-col p-[30px]">
-  <div>
-<h2 class="text-3xl font-semibold"><%= @post.title %></h2>
-<h1 class="text-md text-center font-medium"><%= @post.text %></h1>
-
-
-<%= form_with model: [@post, @like], url: create_post_like_path  do |form| %>
-      <div class="mb-4 flex flex-col cursor-pointer">
-      <div class="text-[#11537d] text-xl font-medium flex gap-2 bg-white px-4 py-2 rounded-[15px] w-fit cursor-pointer">
-<p class="self-end"><%= @post.likes_counter %></p>
-        <%= form.submit "Like 👍" %>
-      </div>
-      </div>
-    <% end %>
-<p><%= @post.comments_counter %> Comments</p>
-<div class="flex flex-col gap-4 comments-container bg-[#11537d] rounded-[30px] flex-grow text-white p-[30px]">
-<h1>Comments</h1>
-<% @post.comments.each do |comment| %>
-<div class="comment-details flex-grow text-white flex flex-row">  
-    <%user = User.find(comment.author_id)%>
-  <p class="text-md text-center font-medium"><%= comment.author.name %>: <%= comment.text %></p>
+<div class="posts-container">
+  <div class="post-data">
+    <div class="post-title">
+      <h2>Post #<%= @post.id %> by <%=@user.name%></h2>
+      <span>Comments: <%= @post.comments_counter %>, Likes: <%= @post.likes_counter %></span>
+    </div>
+    <h4><%= @post.title %><h4>
+    <p><%= @post.text %></p>
   </div>
-<% end %>
-<div class="text-[#11537d] text-xl font-medium flex gap-2 bg-white px-4 py-2 rounded-[15px] w-fit cursor-pointer">
-<%= link_to "add comment", new_post_comment_path(@post) %>
-</div>
-</div>
-</div>
-</div>
+  <%= render "shared/add_like"%>
+  <div class="comments-container">
+    <% @comments.each do |comment| %>
+      <% if comment.post_id == @post.id %>
+      <h4>Username:<%= comment.user.name %> => <%= comment.text %></h4>
+      <%end%>
+    <% end %>
+  </div>
+ <%= render "shared/add_comment"%>
 </div>
