@@ -6,10 +6,10 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 # Users
-first_user = User.create(name: 'Gustavo', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Master of the universe.')
-second_user = User.create(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.')
-third_user = User.create(name: 'Lilly', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Poland.')
-fourth_user = User.create(name: 'Ariel', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Argentina.')
+first_user = User.create(name: 'Gustavo', photo: 'https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80', bio: 'Master of the universe.')
+second_user = User.create(name: 'Tom', photo: 'https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80', bio: 'Teacher from Mexico.')
+third_user = User.create(name: 'Lilly', photo: 'https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80', bio: 'Teacher from Poland.')
+fourth_user = User.create(name: 'Ariel', photo: 'https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80', bio: 'Teacher from Argentina.')
 
 # Posts
 first_post = Post.create(author_id: first_user, title: 'What is Lorem Ipsum', text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.')
@@ -32,3 +32,40 @@ second_comment = Comment.create(post: first_post, author: second_user, text: 'Th
 first_like = Like.create(post: first_post, author: first_user)
 second_like = Like.create(post: first_post, author: second_user)
 third_like = Like.create(post: first_post, author: third_user)
+
+
+
+User.create([
+  { name: 'User1', photo: 'https://example.com/user1.jpg', bio: 'Bio1' },
+  { name: 'User2', photo: 'https://example.com/user2.jpg', bio: 'Bio2' },
+  { name: 'User3', photo: 'https://example.com/user3.jpg', bio: 'Bio3' },
+  { name: 'User4', photo: 'https://example.com/user4.jpg', bio: 'Bio4' },
+  { name: 'User5', photo: 'https://example.com/user5.jpg', bio: 'Bio5' }
+])
+
+users = User.all
+
+posts = []
+5.times do |i|
+  posts << Post.create(
+    title: "Post #{i+1}", 
+    text: "Text #{i+1}", 
+    author: users[i % 5]
+  )
+end
+
+comments = []
+5.times do |i|
+  comments << Comment.create(
+    text: "Comment #{i+1}", 
+    author: users[i % 5],
+    post: posts[i % 5]
+  )
+end
+
+9.times do |i|
+  Like.create(
+    author: users[i % 5],
+    post: posts[i % 5]
+  )
+end
