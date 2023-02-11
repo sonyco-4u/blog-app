@@ -9,9 +9,9 @@ class Api::V1::CommentsController < Api::V1::ApplicationController
                           author_id: params['user_id'],
                           post_id: params['post_id'])
     if comment.save
-     render json: comment, status: :created
+      render json: comment, status: :created
     else
-     render json: { errors: comment.errors }, status: :unprocessable_entity
+      render json: { errors: comment.errors }, status: :unprocessable_entity
     end
   end
 
