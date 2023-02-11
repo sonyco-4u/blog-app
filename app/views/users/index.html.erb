@@ -1,17 +1,14 @@
-<ul class="userCards py-8 w-[80%] mx-auto flex flex-col gap-8"><div class='row>
-<% @users.each do |user| %>
-     <li class="userCard">
-        <a href="users/<%= user.id %>" class="flex flex-row gap-[30px]">
-            <div class="userImage w-[15%]">
-                <img src='<%= user.photo %>'>
-            </div>
-            
-        <a class="userDetails bg-[#2B3A55] rounded-[30px] flex-grow text-white flex justify-between items-center p-[30px]" href="users/<%= user.id %>">
-          <h2 class="text-[40px] font-[600]"><%= user.name %></h2>
-          <p class="self-end text-[20px] font-[400]">Number of posts: <%= user.posts_counter %></p>
-        </a>
-        </a>
-    </li>
-<%end%>
+<%= render "shared/header" %>
+<div class="users-container">
+  <% @users.each do |user| %>
+    <%= link_to user_path(user), :class => 'user-button' do %>
+      <div class="user-card">
+         <img src="<%= user.photo %>" class="user-image" alt="user-image">
+        <div class="user-data">
+          <h1><%= user.name %></h1>
+          <span>Number of posts: <%= user.posts_counter %></span>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
 </div>
-<ul>

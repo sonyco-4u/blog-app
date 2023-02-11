@@ -1,22 +1,7 @@
-<div class="container m-32">
-<%= form_with model: [@user, @post], url: create_user_post_path  do |form| %>
-<% if @post.errors.any? %>
-    <div>
-      <% @post.errors.full_messages.each do |message| %>
-        <div><%= message %></div>
-      <% end %>
-    </div>
-  <% end %>
-  <div class="mb-4 flex flex-col">
-    <%= form.label :title %>
-    <%= form.text_field :title, placeholder: "Add post title", class: "p-2"%>
-  </div>
-  <div class="mb-4 flex flex-col">
-    <%= form.label :text %>
-    <%= form.text_field :text, placeholder: "Add post body", class: "p-2" %>
-  </div>
-  <div class="mb-4 flex flex-col">
-    <%= form.submit "Add post" , class: "text-white text-xl font-medium bg-[#11537d] px-6 py-3 rounded-[15px] w-fit cursor-pointer" %>
-  </div>
-<%end%>
-</div>
+<%= form_with model:Post do |form| %>
+  <%= form.label :title, 'Add a title for your post: ' %><br>
+  <%= form.text_field :title, placeholder: 'Title:' %> <br>
+  <%= form.label :text, 'Add text to your post:' %><br>
+  <%= form.text_area :text, placeholder: 'Text' %><br>
+  <%= form.submit "Create Post"%>
+<% end %>

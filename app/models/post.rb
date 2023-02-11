@@ -1,22 +1,17 @@
 class Post < ApplicationRecord
-  belongs_to :author, class_name: 'User'
-  has_many :comments
-  has_many :likes
-
-  validates :title, presence: true
+  has_many :comments, dependent: :destroy
+  has_many :likes, dependent: :destroy
+  belongs_to :user, foreign_key: 'author_id', class_name: 'User'
   validates :title, length: { maximum: 250 }
-  validates :comments_counter, comparison: { greater_than_or_equal_to: 0 }
-  validates :likes_counter, comparison: { greater_than_or_equal_to: 0 }
-
-  after_save :update_post_counter
-
-  def most_recent_comments
-    comments.order('created_at Desc').limit(5)
+  validates :comments_counter, numericality: { greater_than_or_equal_to: 0, only_integer: true }
+  validates :likes_counter, numericality: { greater_than_or_equal_to: 0, only_integer: true }
+  after_create :update_posts_counter
+  after_destroy :update_posts_counter
+  def update_posts_counter
+    user.update(posts_counter: user.posts.count)
   end
 
-  private
-
-  def update_post_counter
-    author.increment!(:posts_counter)
+  def recent_comments
+    comments.order(created_at: :desc).limit(5)
   end
 end

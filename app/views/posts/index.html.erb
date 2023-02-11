@@ -1,36 +1,26 @@
-<div class="userContainer flex flex-col gap-8 py-8 w-[80%] mx-auto">
-  <div class="userCard">
-    <a href="#" class="flex flex-row gap-[30px]">
-      <div class="userImage w-[15%]">
-        <img src=<%= @user.photo %>>
+<%= render "shared/header" %>
+ <%= render "shared/user_data"%>
+ <div class="posts-container">
+  <% @posts.each_with_index do |post, index| %>
+    <%= link_to post_show_path(:id => post.id) do %>
+      <div class="post-card">
+        <div>
+          <h2>Post <%= index + 1 %></h2>
+          <p>Title: <%= post.title %></p>
+          <p><%= post.text %></p>
+        </div>
+        <div class="post-counter">
+          <span>Comments: <%= post.comments_counter %></span>
+          <span>Likes: <%= post.likes_counter %></span>
+        </div>
       </div>
-      <div class="userDetails bg-[#11537d] rounded-[30px] flex-grow text-white flex justify-between items-center p-[30px]">
-        <h2 class="text-[40px] font-[600]"><%= @user.name %></h2>
-        <p class="self-end text-[20px] font-[400]">Number of posts: <%= @user.posts_counter %></p>
+      <div class="comments-container">
+        <% @comments.each do |comment| %>
+          <% if comment.post_id == post.id %>
+          <h4>Post_ID:<%=  comment.post_id %>:<%= comment.text %></h4>
+          <%end%>
+        <% end %>
       </div>
-    </a>
-  </div>
-  <ul class="userCards flex flex-col gap-8">
-    <% @posts.each do |post| %>
-      <li class="postCard border-4 border-blue-500 rounded-[20px] p-2">
-        <a href="<%= user_post_path(@user, post) %>" class="flex flex-col gap-8 post_link">
-          <div class="postDetails bg-[#11537d] rounded-[30px] flex-grow text-white flex flex-col p-[30px]">
-            <div>  
-              <h2 class="text-3xl font-semibold"><%= post.title %></h2>
-              <p class="text-md text-center font-medium"><%= post.text %></p>
-            </div> 
-            <p class="self-end">Likes: <%= post.likes_counter %> , comments: <%= post.comments_counter %></p>
-          </div>
-          <ul class="bg-sky-600 rounded-[30px] flex-grow text-white font-medium flex flex-col p-[30px]">
-            <%post.most_recent_comments.each do |comment| %>
-              <li class="user-comment">
-                <h3><%= @user.name %>: <%= comment.text %></h3>
-              </li>
-            <% end %>
-          </ul>
-        </a>
-      </li>
     <% end %>
-  </ul>
-  <a href="<%= new_user_post_path(@user) %>" class="self-center text-white text-xl font-medium bg-[#11537d] p-[20px] rounded-[15px] w-fit">Add new post</a>
-</div
+  <% end %>
+ </div>
