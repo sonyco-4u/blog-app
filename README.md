@@ -132,6 +132,6 @@ I would like to thank to the code reviewers and my partners who are helping all 
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](./License.md) licensed.
+This project is [MIT](https://github.com/sonyco-4u/blog-app/blob/authorization-rules/LICENSE) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
