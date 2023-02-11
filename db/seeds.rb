@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
 # Users
 first_user = User.create(name: 'Gustavo', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Master of the universe.')
 second_user = User.create(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.')
@@ -32,3 +33,4 @@ second_comment = Comment.create(post: first_post, author: second_user, text: 'Th
 first_like = Like.create(post: first_post, author: first_user)
 second_like = Like.create(post: first_post, author: second_user)
 third_like = Like.create(post: first_post, author: third_user)
+
