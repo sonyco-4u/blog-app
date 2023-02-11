@@ -4,9 +4,9 @@ RSpec.describe 'User index', type: :feature do
   before(:each) do
     @user = User.create(name: 'Diego', photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
                         bio: 'I´m a student', posts_counter: 0)
-    @user2 = User.create(name: 'Marcos', photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
+    @user2 = User.create(name: 'Marcos', photo: 'https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg',
                          bio: 'I´m a student', posts_counter: 1)
-    @user3 = User.create(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
+    @user3 = User.create(name: 'Tom', photo: 'https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg',
                          bio: 'I´m a student', posts_counter: 2)
     visit users_path
   end
@@ -22,6 +22,8 @@ RSpec.describe 'User index', type: :feature do
     # Profile picture test
     it 'shows the right photo' do
       expect(page).to have_xpath("//img[@src='https://unsplash.com/photos/F_-0BxGuVvo']")
+      expect(page).to have_xpath("//img[@src='https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg']")
+      expect(page).to have_xpath("//img[@src='https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg']")
     end
 
     # Number of posts test
