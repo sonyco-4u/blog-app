@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
   namespace :api do
     namespace :v1 do
       resources :users, only: [:index, :show] do
@@ -9,6 +10,7 @@ Rails.application.routes.draw do
       end
     end
   end
+
 
   devise_for :users
   root to: "users#index"
